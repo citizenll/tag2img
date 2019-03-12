@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>标记Ta</title>
+        <link rel="stylesheet" href="mobi.min.css" />
+        <style>
+            .file-wrapper {
+                text-align: center;
+                padding: 20px;
+            }
+            #tag {
+                width: 100px;
+            }
+            .form [type='file'],
+            .form [type='range'] {
+                display: inline-block;
+                width: auto;
+            }
+            .form [type='email'],
+            .form [type='number'],
+            .form [type='password'],
+            .form [type='search'],
+            .form [type='tel'],
+            .form [type='text'],
+            .form [type='url'],
+            .form select,
+            .form textarea {
+                display: inline-block;
+                width: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="file-wrapper">
+            <form class="form" onsubmit="return false">
+                <input type="file" id="file" />
+                <input type="text" placeholder="标签文字" id="tag" />
+                <select name="" id="direction" onchange="selectHandle()">
+                    <option disabled selected value> -- 方向 -- </option>
+                    <option value="1">左上</option>
+                    <option value="2">右上</option>
+                    <option value="3">右下</option>
+                    <option value="4">左下</option>
+                </select>
+                <button class="btn" onclick="markHandle()">
+                    标记
+                </button>
+            </form>
+        </div>
+        <div style="text-align:center">
+            <canvas></canvas>
+        </div>
+        <span id="text" style="opacity:0"></span>
+        <script src="app.js"></script>
+    </body>
+</html>
